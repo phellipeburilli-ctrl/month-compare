@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Video, Megaphone, Server } from "lucide-react";
+import { ChevronDown, Video, Megaphone, Server, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -22,7 +22,14 @@ const navItems: NavItem[] = [
     {
         label: "Backend",
         icon: <Server className="w-4 h-4" />,
-        path: "/backend",
+        children: [
+            { label: "Funil", path: "/backend/funil", icon: <Server className="w-4 h-4" /> },
+        ],
+    },
+    {
+        label: "Resumo",
+        icon: <TrendingUp className="w-4 h-4" />,
+        path: "/resumo",
     },
 ];
 

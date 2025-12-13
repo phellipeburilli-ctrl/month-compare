@@ -1095,6 +1095,46 @@ export const getTipoTarefaColor = (name: string) => {
 export const getModuloColor = getProductColorOriginal;
 export const getProductColor = getProductColorOriginal;
 
+// Platform colors
+const PLATFORM_COLORS: Record<string, string> = {
+    "Cartpanda": "#22C55E",      // Verde
+    "Buygoods": "#3B82F6",       // Azul
+    "Digistore24": "#F59E0B",    // Amarelo
+    "Clickbank": "#EC4899",      // Rosa
+    "Todas": "#A855F7",          // Roxo
+    "Internet": "#06B6D4",       // Cyan
+    "Não Informado": "#94A3B8",  // Cinza
+};
+
+export const getPlatformColor = (name: string): string => {
+    return PLATFORM_COLORS[name] || "#94A3B8";
+};
+
+// Nicho colors - cores específicas para cada nicho real
+const NICHO_COLORS: Record<string, string> = {
+    // Nichos principais
+    "Pain Relief": "#EF4444",        // Vermelho
+    "Memory": "#A855F7",             // Roxo
+    "Prostate": "#3B82F6",           // Azul
+    "Dental": "#22C55E",             // Verde
+    "Energy": "#F97316",             // Laranja
+    "Adulto": "#EC4899",             // Rosa
+    "Emagrecimento": "#8B5CF6",      // Violet
+    "Joint": "#14B8A6",              // Teal
+    "Concentração": "#6366F1",       // Indigo
+    "Sleep": "#1D4ED8",              // Azul escuro
+    "Constipação": "#84CC16",        // Lima
+    "Fungos": "#F59E0B",             // Âmbar
+    "Tinnitus": "#06B6D4",           // Cyan
+    "Todos Produtos": "#475569",     // Slate
+    "Operação Geral": "#1E293B",     // Slate escuro
+    "Outros": "#94A3B8",             // Cinza
+};
+
+export const getNichoColor = (name: string): string => {
+    return NICHO_COLORS[name] || "#94A3B8";
+};
+
 export const kpisBackend = {
     totalOutubro: totalBackendOutubro,
     totalNovembro: totalBackendNovembro,

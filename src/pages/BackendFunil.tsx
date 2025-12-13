@@ -1,4 +1,3 @@
-
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { DonutChart } from "@/components/dashboard/DonutChart";
@@ -6,17 +5,13 @@ import { InsightCard } from "@/components/dashboard/InsightCard";
 import { BackendHighlights } from "@/components/dashboard-backend/BackendHighlights";
 import { BackendCustomFieldsComparison } from "@/components/dashboard-backend/BackendCustomFieldsComparison";
 import { BackendModulesChart } from "@/components/dashboard-backend/BackendModulesChart";
-import { Server, Code, Flag, TrendingUp, TrendingDown, Filter } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Server, Code, Flag, TrendingUp, TrendingDown } from "lucide-react";
 
 import {
-    tipoTarefaOutubro, tipoTarefaNovembro,
-    responsavelOutubro, responsavelNovembro,
-    prioridadeOutubro, prioridadeNovembro,
     moduloOutubro, moduloNovembro,
     totalBackendOutubro, totalBackendNovembro,
     kpisBackend,
-    getTipoTarefaColor, getModuloColor,
+    getModuloColor,
     produtoBlackOutubro, produtoBlackNovembro,
     plataformaOutubro, plataformaNovembro,
     squadsOutubro, squadsNovembro,
@@ -24,28 +19,17 @@ import {
     setorXmxOutubro, setorXmxNovembro
 } from "@/data/dashboardBackendData";
 
-const DashboardBackend = () => {
+const BackendFunil = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background animate-fade-in">
             <div className="container mx-auto px-4 py-8">
                 <DashboardHeader
-                    title="Dashboard Backend"
+                    title="Funil de Desenvolvimento"
                     subtitle="Análise Comparativa • Equipe de Desenvolvimento"
                     dashboardType="ads"
                 />
 
-                {/* Navigation to Funnel */}
-                <div className="mb-6 flex gap-4">
-                    <Link
-                        to="/backend/funil"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-lg font-medium text-sm hover:from-purple-600 hover:to-violet-700 transition-all shadow-md hover:shadow-lg"
-                    >
-                        <Filter className="w-4 h-4" />
-                        Ver Funil de Desenvolvimento
-                    </Link>
-                </div>
-
-                <main className="space-y-8">
+                <main className="space-y-8 mt-8">
                     {/* KPIs Principais */}
                     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <MetricCard
@@ -156,4 +140,4 @@ const DashboardBackend = () => {
     );
 };
 
-export default DashboardBackend;
+export default BackendFunil;
